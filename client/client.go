@@ -38,7 +38,7 @@ func (c *EventdClient) Connect() error {
 
 	nkeyFilePath := options.GetOptions().NKeyFile
 	// Use Nkey authentication.
-	if len(nkeyFilePath) >= 0 {
+	if len(nkeyFilePath) > 0 {
 		fullFilePath, err := c.normalizePath(nkeyFilePath)
 		if err != nil {
 			panic(fmt.Errorf("无效的nkeyFile配置,nkeyFile:%s", nkeyFilePath))
