@@ -8,7 +8,7 @@ import (
 	"path/filepath"
 
 	"github.com/abmpio/abmp/pkg/log"
-	"github.com/abmpio/eventd_sdk/options"
+	"github.com/abmpio/eventd-sdk/options"
 	"github.com/nats-io/nats.go"
 )
 

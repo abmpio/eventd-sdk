@@ -7,7 +7,7 @@ import (
 	"github.com/abmpio/abmp/pkg/log"
 	"github.com/abmpio/app"
 
-	"github.com/abmpio/eventd_sdk/client"
+	"github.com/abmpio/eventd-sdk/client"
 )
 
 func initEventdClientStartupAction() app.IStartupAction {

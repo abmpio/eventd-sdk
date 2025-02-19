@@ -1,4 +1,4 @@
-module github.com/abmpio/eventd_sdk
+module github.com/abmpio/eventd-sdk
 
 go 1.22.2
 
