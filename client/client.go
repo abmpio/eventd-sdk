@@ -33,6 +33,11 @@ func SetGlobalClient(c *EventdClient) {
 	_client = c
 }
 
+// check eventd is disabled?
+func EventdDisabled() bool {
+	return options.GetOptions().Disabled
+}
+
 func (c *EventdClient) Connect() error {
 	// Connect Options.
 	opts := []nats.Option{

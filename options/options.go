@@ -22,6 +22,7 @@ type EventdOptions struct {
 	NKeyFile string `json:"nkeyFile"`
 	Host     string `json:"host"`
 	Port     int    `json:"port"`
+	Disabled bool   `json:"disabled"`
 }
 
 func (o *EventdOptions) normalize() {

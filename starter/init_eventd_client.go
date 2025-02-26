@@ -8,11 +8,17 @@ import (
 	"github.com/abmpio/app"
 
 	"github.com/abmpio/eventd-sdk/client"
+	"github.com/abmpio/eventd-sdk/options"
 )
 
 func initEventdClientStartupAction() app.IStartupAction {
 	return app.NewStartupAction(func() {
 		if app.HostApplication.SystemConfig().App.IsRunInCli {
+			return
+		}
+		option := options.GetOptions()
+		if option.Disabled {
+			log.Logger.Warn("eventd.disabled参数为true,将禁用eventd插件")
 			return
 		}
 		client.SetGlobalClient(client.NewClient())
