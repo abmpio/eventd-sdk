@@ -35,6 +35,12 @@ func (o *EventdOptions) normalize() {
 	}
 }
 
+func (o *EventdOptions) String() string {
+	return fmt.Sprintf("%s:%d",
+		o.Host,
+		o.Port)
+}
+
 func GetOptions() *EventdOptions {
 	_once.Do(func() {
 		if err := configurationx.GetInstance().UnmarshFromKey(ConfigurationKey, &_options, func(dc *mapstructure.DecoderConfig) {
