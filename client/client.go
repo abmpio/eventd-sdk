@@ -75,6 +75,11 @@ func (c *EventdClient) Connect() error {
 		return err
 	}
 	nc.SetErrorHandler(func(c *nats.Conn, s *nats.Subscription, err error) {
+		if s == nil {
+			log.Logger.Warn(fmt.Sprintf("eventd的连接出现异步异常,err:%s",
+				err.Error()))
+			return
+		}
 		log.Logger.Warn(fmt.Sprintf("eventd的订阅出现异常,topic:%s,err:%s",
 			s.Subject, err.Error()))
 	})
